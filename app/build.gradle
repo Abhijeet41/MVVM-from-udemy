@@ -1,0 +1,94 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.abhi41.mvvmpractice"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    buildFeatures{
+        dataBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+def lifecycleExtentionVersions = '1.1.1'
+def butterknifeVersion = '10.2.3'
+def retroVersion = '2.3.0'
+def glideVersion = '4.11.0'
+def rxAndroidJavaVersion = '2.1.1'
+def rxJavaVersion = '2.2.6'
+def httpLoggingInterceptor = "4.5.0";
+def daggerVer = '2.27'// or latest version
+def arch_version = "2.1.0"
+def mockitoVersion = '2.11.0'
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
+
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+    annotationProcessor "android.arch.lifecycle:compiler:1.1.1"
+
+    implementation "com.jakewharton:butterknife:$butterknifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butterknifeVersion"
+
+    // retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retroVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retroVersion"
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+
+    //RxJava
+    implementation "io.reactivex.rxjava2:rxandroid:$rxAndroidJavaVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+
+    // HttpLogging Interceptor
+    implementation "com.squareup.okhttp3:logging-interceptor:$httpLoggingInterceptor"
+    // Retrofit Scalars Converter
+    implementation 'com.squareup.retrofit2:converter-scalars:2.5.0'
+
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glideVersion"
+
+    implementation "com.google.dagger:dagger:$daggerVer"
+    implementation "com.google.dagger:dagger-android-support:$daggerVer"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$daggerVer"
+    annotationProcessor "com.google.dagger:dagger-compiler:$daggerVer"
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    testImplementation "org.mockito:mockito-inline:$mockitoVersion"
+    testImplementation "androidx.arch.core:core-testing:$arch_version"
+
+
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}
