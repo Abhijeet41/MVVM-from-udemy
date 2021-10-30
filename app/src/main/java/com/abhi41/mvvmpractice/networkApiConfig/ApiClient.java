@@ -1,9 +1,9 @@
-package com.abhi41.mvvmpractice.NetworkApiConfig;
+package com.abhi41.mvvmpractice.networkApiConfig;
 
 
 
-import com.abhi41.mvvmpractice.DI.DaggerMyComponent;
-import com.abhi41.mvvmpractice.Model.CountryModel;
+import com.abhi41.mvvmpractice.di.DaggerMyComponent;
+import com.abhi41.mvvmpractice.data.Model.CountryModel;
 import com.abhi41.mvvmpractice.response.UsersList;
 
 

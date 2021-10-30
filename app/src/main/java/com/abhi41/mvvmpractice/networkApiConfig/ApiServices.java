@@ -1,15 +1,13 @@
-package com.abhi41.mvvmpractice.NetworkApiConfig;
+package com.abhi41.mvvmpractice.networkApiConfig;
 
-import com.abhi41.mvvmpractice.Model.CountryModel;
+import com.abhi41.mvvmpractice.data.Model.CountryModel;
 import com.abhi41.mvvmpractice.response.UsersList;
 
 import java.util.List;
 
 import io.reactivex.Single;
-import retrofit2.http.Field;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
-import retrofit2.http.Url;
 
 public interface ApiServices {
 

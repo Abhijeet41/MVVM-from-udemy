@@ -1,4 +1,4 @@
-package com.abhi41.mvvmpractice.Model;
+package com.abhi41.mvvmpractice.data.Model;
 
 import com.google.gson.annotations.SerializedName;
 

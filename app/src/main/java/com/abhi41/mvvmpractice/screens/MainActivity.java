@@ -1,4 +1,4 @@
-package com.abhi41.mvvmpractice.View;
+package com.abhi41.mvvmpractice.screens;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -14,7 +14,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.abhi41.mvvmpractice.R;
-import com.abhi41.mvvmpractice.ViewModel.ListViewModel;
+import com.abhi41.mvvmpractice.view_model.ListViewModel;
 import com.abhi41.mvvmpractice.adapter.CountryListAdapter;
 
 import java.util.ArrayList;

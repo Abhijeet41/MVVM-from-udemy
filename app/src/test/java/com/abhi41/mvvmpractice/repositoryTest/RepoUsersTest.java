@@ -1,12 +1,12 @@
 package com.abhi41.mvvmpractice.repositoryTest;
 
-import android.service.autofill.UserData;
+import android.app.Application;
 
 import androidx.annotation.NonNull;
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule;
 
-import com.abhi41.mvvmpractice.NetworkApiConfig.ApiClient;
-import com.abhi41.mvvmpractice.Repository.RepoUsers;
+import com.abhi41.mvvmpractice.networkApiConfig.ApiClient;
+import com.abhi41.mvvmpractice.data.Repository.RepoUsers;
 import com.abhi41.mvvmpractice.response.DataItem;
 import com.abhi41.mvvmpractice.response.UsersList;
 
@@ -28,7 +28,7 @@ import io.reactivex.android.plugins.RxAndroidPlugins;
 import io.reactivex.internal.schedulers.ExecutorScheduler;
 import io.reactivex.plugins.RxJavaPlugins;
 
-public class RepoUsersTest {
+public class RepoUsersTest extends Application {
 
     //It simplifies that it's a rule that any task executaion will be instant.
     @Rule
@@ -38,7 +38,7 @@ public class RepoUsersTest {
     ApiClient apiClient;
 
     @InjectMocks
-    RepoUsers repoUsers = new RepoUsers();
+    RepoUsers repoUsers = RepoUsers.getInstance();
 
     private Single<UsersList> usersListSingle;
 
@@ -61,7 +61,7 @@ public class RepoUsersTest {
         Mockito.when(apiClient.getUsers(1)).thenReturn(usersListSingle);
         repoUsers.fetchUsersList(1);
 
-        Assert.assertEquals(1, repoUsers.mutableUserData.getValue().getData().size());
+        Assert.assertEquals(1, repoUsers.mUserdata.getValue().data.getData().size());
         Assert.assertEquals(false, repoUsers.userError.getValue());
         Assert.assertEquals(false, repoUsers.loading.getValue());
     }

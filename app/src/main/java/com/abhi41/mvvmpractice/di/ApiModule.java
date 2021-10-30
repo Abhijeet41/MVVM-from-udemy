@@ -1,7 +1,7 @@
-package com.abhi41.mvvmpractice.DI;
+package com.abhi41.mvvmpractice.di;
 
-import com.abhi41.mvvmpractice.NetworkApiConfig.ApiClient;
-import com.abhi41.mvvmpractice.NetworkApiConfig.ApiServices;
+import com.abhi41.mvvmpractice.networkApiConfig.ApiClient;
+import com.abhi41.mvvmpractice.networkApiConfig.ApiServices;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 

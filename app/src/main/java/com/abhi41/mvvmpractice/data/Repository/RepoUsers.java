@@ -1,19 +1,19 @@
-package com.abhi41.mvvmpractice.Repository;
+package com.abhi41.mvvmpractice.data.Repository;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.abhi41.mvvmpractice.DI.DaggerMyComponent;
-import com.abhi41.mvvmpractice.NetworkApiConfig.ApiClient;
+import com.abhi41.mvvmpractice.di.DaggerMyComponent;
+import com.abhi41.mvvmpractice.networkApiConfig.ApiClient;
 import com.abhi41.mvvmpractice.response.DataItem;
 import com.abhi41.mvvmpractice.response.UsersList;
+import com.abhi41.mvvmpractice.utils.Resource;
 
 import java.util.List;
 
 import javax.inject.Inject;
 
-import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.observers.DisposableSingleObserver;
@@ -21,46 +21,54 @@ import io.reactivex.schedulers.Schedulers;
 
 public class RepoUsers {
 
+    public static RepoUsers repoUsers;
+
     public MutableLiveData<Boolean> loading = new MutableLiveData<>();
     public MutableLiveData<Boolean> userError = new MutableLiveData<>();
 
-    public MutableLiveData<List<DataItem>> mutableUserdetail;
+    public MutableLiveData<Resource<List<DataItem>>> mutableUserdetail;
     private CompositeDisposable disposable = new CompositeDisposable();
-    public MutableLiveData<UsersList> mutableUserData = new MutableLiveData<>();
+
+    public MutableLiveData<Resource<UsersList>> mUserdata = new MutableLiveData<>();
 
     @Inject
     public ApiClient apiClient;
 
-    public RepoUsers() {
+    private RepoUsers() {
         DaggerMyComponent.create().inject(this);
+
     }
 
-    public LiveData<UsersList> fetchUsersList(int currentPage) {
-       return apiFetchUsers(currentPage);
+
+    public static RepoUsers getInstance() {
+        if (repoUsers == null) {
+            repoUsers = new RepoUsers();
+        }
+
+        return repoUsers;
+    }
+
+    public MutableLiveData<Resource<UsersList>> fetchUsersList(int currentPage) {
+        return apiFetchUsers(currentPage);
     }
 
     public void fetchUserDetails(String name) {
-        apiFetchUserDetails(name);
-    }
-
-    public MutableLiveData<Boolean> getLoading()
-    {
-        return loading;
-    }
-
-
-
-    public MutableLiveData<List<DataItem>> getMutableUserDetail() {
         if (mutableUserdetail == null) {
             mutableUserdetail = new MutableLiveData<>();
         }
+        apiFetchUserDetails(name);
+    }
+
+
+    public MutableLiveData<Resource<List<DataItem>>> getMutableUserDetail() {
+
         return mutableUserdetail;
     }
 
 
-    private LiveData<UsersList> apiFetchUsers(int currentPage) {
+    public MutableLiveData<Resource<UsersList>> apiFetchUsers(int currentPage) {
 
-        loading.setValue(true);
+        mUserdata.setValue(Resource.loading(null));
 
         disposable.add(apiClient.getUsers(currentPage)
                 .subscribeOn(Schedulers.newThread())
@@ -71,7 +79,10 @@ public class RepoUsers {
                     public void onSuccess(@NonNull UsersList usersList) {
                         loading.setValue(false);
                         userError.setValue(false);
-                        mutableUserData.setValue(usersList);
+
+
+                        mUserdata.setValue(Resource.success(usersList));
+
                     }
 
                     @Override
@@ -79,18 +90,18 @@ public class RepoUsers {
                         userError.setValue(true);
                         loading.setValue(false);
 
-                        mutableUserData.setValue(null);
+                        mUserdata.setValue(Resource.error(e.getMessage(), null));
 
                     }
                 }));
 
-        return mutableUserData;
+        return mUserdata;
 
     }
 
     private void apiFetchUserDetails(String name) {
 
-        loading.setValue(true);
+        mutableUserdetail.setValue(Resource.loading(null));
 
         disposable.add(apiClient.getUserDetails(name)
                 .subscribeOn(Schedulers.newThread())
@@ -100,12 +111,12 @@ public class RepoUsers {
                     public void onSuccess(@NonNull UsersList usersList) {
                         loading.setValue(false);
 
-                        mutableUserdetail.setValue(usersList.getData());
+                        mutableUserdetail.setValue(Resource.success(usersList.getData()));
                     }
 
                     @Override
                     public void onError(@NonNull Throwable e) {
-
+                        mutableUserdetail.setValue(Resource.error(e.getMessage(), null));
                         loading.setValue(false);
                     }
                 }));

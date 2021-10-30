@@ -5,9 +5,9 @@ import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule;
 
-import com.abhi41.mvvmpractice.Model.CountryModel;
-import com.abhi41.mvvmpractice.NetworkApiConfig.ApiClient;
-import com.abhi41.mvvmpractice.ViewModel.ListViewModel;
+import com.abhi41.mvvmpractice.data.Model.CountryModel;
+import com.abhi41.mvvmpractice.networkApiConfig.ApiClient;
+import com.abhi41.mvvmpractice.view_model.ListViewModel;
 
 import org.junit.Assert;
 import org.junit.Before;

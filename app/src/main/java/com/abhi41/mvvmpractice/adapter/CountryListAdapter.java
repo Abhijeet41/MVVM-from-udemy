@@ -9,9 +9,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.abhi41.mvvmpractice.Model.CountryModel;
+import com.abhi41.mvvmpractice.data.Model.CountryModel;
 import com.abhi41.mvvmpractice.R;
-import com.abhi41.mvvmpractice.Utils;
+import com.abhi41.mvvmpractice.utils.Common;
 
 import java.util.List;
 
@@ -81,7 +81,7 @@ public class CountryListAdapter extends RecyclerView.Adapter<CountryListAdapter.
             txtCountry.setText(countryModel.getCountryName());
             txtCapital.setText(countryModel.getCapital());
 
-            Utils.loadImage(img, countryModel.getFlag(), Utils.getProgressCircularDrawable(img.getContext()));
+            Common.loadImage(img, countryModel.getFlag(), Common.getProgressCircularDrawable(img.getContext()));
 
         }
 

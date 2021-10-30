@@ -1,14 +1,13 @@
-package com.abhi41.mvvmpractice.ViewModel;
+package com.abhi41.mvvmpractice.view_model;
 
 import android.app.Application;
 
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
-import com.abhi41.mvvmpractice.DI.DaggerMyComponent;
-import com.abhi41.mvvmpractice.DI.MyComponent;
-import com.abhi41.mvvmpractice.Model.CountryModel;
-import com.abhi41.mvvmpractice.NetworkApiConfig.ApiClient;
+import com.abhi41.mvvmpractice.di.DaggerMyComponent;
+import com.abhi41.mvvmpractice.data.Model.CountryModel;
+import com.abhi41.mvvmpractice.networkApiConfig.ApiClient;
 
 import java.util.List;
 

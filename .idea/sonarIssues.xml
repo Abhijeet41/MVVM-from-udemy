@@ -3,7 +3,17 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="/Dummy.txt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="/a.dummy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.lifecycle/lifecycle-extensions/2.0.0/ec7ad4a5233eab676f8fad210d18eb343cde5974/lifecycle-extensions-2.0.0-sources.jar!/androidx/lifecycle/ViewModelProviders.java">
           <value>
             <set />
           </value>
@@ -34,6 +44,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/mvvmpractice/Common.java">
           <value>
             <set />
           </value>
@@ -138,6 +153,21 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/mvvmpractice/data/Repository/RepoUsers.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/mvvmpractice/data/empty.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/mvvmpractice/empty.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/mvvmpractice/response/DataItem.java">
           <value>
             <set />
@@ -148,7 +178,32 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/mvvmpractice/screens/UserDetailScreen.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/mvvmpractice/screens/UserListScreen.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/mvvmpractice/utils/MyApplication.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/mvvmpractice/utils/Resource.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/mvvmpractice/utils/Status.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/abhi41/mvvmpractice/view_model/ViewmodelUserList.java">
           <value>
             <set />
           </value>
@@ -268,12 +323,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../java_shooping_cart_mvvm/app/src/main/java/com/abhi41/java_shoopingcart/Views/MainActivity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../java_shooping_cart_mvvm/app/src/main/java/com/abhi41/java_shoopingcart/javapractice/builder_pattern/ShopScreen.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../MVVM Tutorial/TV Show App/app/build.gradle">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../../MVVM Tutorial/TV Show App/app/src/main/java/com/abhi41/tvshowappmvvm/Repositary/TVShowDetailsRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../MVVM Tutorial/TV Show App/app/src/main/java/com/abhi41/tvshowappmvvm/activity/ChatActivity.java">
           <value>
             <set />
           </value>
@@ -288,12 +358,37 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../MVVM Tutorial/TV Show App/app/src/main/java/com/abhi41/tvshowappmvvm/activity/chat_functionality/Registration.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../MVVM Tutorial/TV Show App/app/src/main/java/com/abhi41/tvshowappmvvm/model/TvShows.java">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../../MVVM Tutorial/TV Show App/app/src/main/java/com/abhi41/tvshowappmvvm/viewmodels/TVShowDetailsViewModel.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../MVVM Tutorial/TV Show App/app/src/main/res/drawable/gradient_register.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../MVVM Tutorial/TV Show App/app/src/main/res/layout/activity_chat.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../MVVM Tutorial/TV Show App/app/src/main/res/layout/activity_main.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../MVVM Tutorial/TV Show App/app/src/main/res/layout/activity_registration.xml">
           <value>
             <set />
           </value>
@@ -333,7 +428,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../PAMAC Projects/SBM/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../PAMAC Projects/SBM/app/src/main/java/com/example/demoapplication/LoginActivity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../mosamjob_android_candidate/app/src/main/AndroidManifest.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../shailesh project/Search-Example-Dagger2/app/src/main/java/com/example/androidexmaple2/ui/main/ActivityMain.java">
           <value>
             <set />
           </value>

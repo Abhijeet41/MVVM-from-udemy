@@ -1,16 +1,17 @@
-package com.abhi41.mvvmpractice.View;
+package com.abhi41.mvvmpractice.screens;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.abhi41.mvvmpractice.R;
-import com.abhi41.mvvmpractice.ViewModel.ViewmodelUserList;
+import com.abhi41.mvvmpractice.utils.Resource;
+import com.abhi41.mvvmpractice.view_model.ViewmodelUserList;
 import com.abhi41.mvvmpractice.databinding.ActivityUserDetailScreenBinding;
 import com.abhi41.mvvmpractice.response.DataItem;
 
@@ -49,13 +50,35 @@ public class UserDetailScreen extends AppCompatActivity {
 
     private void observers() {
 
-        viewmodel.getUserDetails().observe(this, new Observer<List<DataItem>>() {
+        viewmodel.getUserDetails().observe(this, new Observer<Resource<List<DataItem>>>() {
             @Override
-            public void onChanged(List<DataItem> dataItems) {
-                if (dataItems == null) {
-                    return;
+            public void onChanged(Resource<List<DataItem>> dataItems) {
+
+
+                switch (dataItems.status){
+
+                    case LOADING:{
+                        //show loading stuff
+                    }
+                    break;
+
+                    case SUCCESS:{
+
+                        if (dataItems.data == null) {
+                            return;
+                        }
+                        binding.setUserData(dataItems.data.get(0));
+                    }
+                    break;
+
+                    case ERROR:{
+                        Toast.makeText(getApplicationContext(), ""+dataItems.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+
+
                 }
-                binding.setUserData(dataItems.get(0));
+
+
             }
         });
 

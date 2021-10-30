@@ -8,6 +8,10 @@
             raw.githubusercontent.com
         </domain>
 
+        <domain includeSubdomain="true">
+            gorest.co.in
+        </domain>
+
     </domain-config>
 
 </network-security-config>

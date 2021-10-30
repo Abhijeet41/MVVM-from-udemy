@@ -1,17 +1,18 @@
 package com.abhi41.mvvmpractice.response;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.BindingAdapter;
 import androidx.recyclerview.widget.DiffUtil;
 
-import com.abhi41.mvvmpractice.Utils;
-import com.bumptech.glide.Glide;
+import com.abhi41.mvvmpractice.utils.Common;
 import com.google.gson.annotations.SerializedName;
 
 
-public class DataItem{
+public class DataItem implements Parcelable {
 
 	@SerializedName("gender")
 	private String gender;
@@ -27,6 +28,26 @@ public class DataItem{
 
 	@SerializedName("status")
 	private String status;
+
+	protected DataItem(Parcel in) {
+		gender = in.readString();
+		name = in.readString();
+		id = in.readInt();
+		email = in.readString();
+		status = in.readString();
+	}
+
+	public static final Creator<DataItem> CREATOR = new Creator<DataItem>() {
+		@Override
+		public DataItem createFromParcel(Parcel in) {
+			return new DataItem(in);
+		}
+
+		@Override
+		public DataItem[] newArray(int size) {
+			return new DataItem[size];
+		}
+	};
 
 	public String getGender(){
 		return gender;
@@ -89,7 +110,21 @@ public class DataItem{
 
 	@BindingAdapter("android:userImage")
 	public static void loadImage(ImageView imageView, String imageUrl) {
-		Utils.loadImage(imageView,imageUrl,Utils.getProgressCircularDrawable(imageView.getContext()));
+		Common.loadImage(imageView,imageUrl, Common.getProgressCircularDrawable(imageView.getContext()));
 	}
 
+	@Override
+	public int describeContents() {
+		return 0;
+	}
+
+	@Override
+	public void writeToParcel(Parcel parcel, int flags) {
+		parcel.writeString(gender);
+		parcel.writeString(name);
+		parcel.writeString(email);
+		parcel.writeString(status);
+		parcel.writeInt(id);
+
+	}
 }
